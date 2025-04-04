@@ -8,11 +8,11 @@
 <?import javafx.scene.text.Text?>
 <?import org.kordamp.ikonli.javafx.FontIcon?>
 
-<AnchorPane fx:id="anchorPaneUsers" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="400.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="es.ies.puerto.controller.UsersListController">
+<AnchorPane fx:id="anchorPaneUsers" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="431.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="es.ies.puerto.controller.UsersListController">
    <children>
       <Pane fx:id="updatePane" layoutX="41.0" layoutY="64.0" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="60.0" prefWidth="318.0" styleClass="registerPane" stylesheets="@styles.css">
          <children>
-            <Text fx:id="textUsersBigLabel" layoutX="117.0" layoutY="39.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Usuarios" wrappingWidth="124.8359375">
+            <Text fx:id="textUsersBigLabel" layoutX="115.0" layoutY="38.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Usuarios" wrappingWidth="140.8359375">
                <font>
                   <Font name="System Bold" size="26.0" />
                </font>

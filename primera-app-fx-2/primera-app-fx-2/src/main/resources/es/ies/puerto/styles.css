@@ -1,5 +1,5 @@
 .loginVbox{
-    -fx-background-color:  #d2b48clinear-gradient(from 0% 100% to 0% 30%,, #f5f5dc,);
+    -fx-background-color:  linear-gradient(from 0% 100% to 0% 30%,#d2b48c, #f5f5dc,);
     -fx-border-color:black, linear-gradient(from 0% 0% to 0% 100%, #d2b48c, #f5f5dc);;
     -fx-border-width: 3, 7;
     -fx-border-insets: 0, 6
