@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<VBox fx:id="updateUserVbox" alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="955.0" prefWidth="548.0" spacing="20.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="es.ies.puerto.controller.UpdateUserDataController">
+    <children>
+        <Pane fx:id="updateIcon" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="60.0" prefWidth="352.0" styleClass="updatePane" stylesheets="@styles.css">
+            <children>
+                <Text fx:id="updateUserDataBigLabel" layoutX="108.0" layoutY="36.0" strokeType="OUTSIDE" strokeWidth="0.0" text="MODIFICAR DATOS">
+                    <font>
+                        <Font name="System Bold" size="16.0" />
+                    </font>
+                </Text>
+                <ImageView fx:id="update_Icon" fitHeight="37.0" fitWidth="50.0" layoutX="63.0" layoutY="11.0" pickOnBounds="true" preserveRatio="true">
+                    <image>
+                        <Image url="@images/icons8-actualizaciones-disponibles-50.png" />
+                    </image>
+                </ImageView>
+            </children>
+        </Pane>
+        <Text fx:id="newNickNameTextLabel" strokeType="OUTSIDE" strokeWidth="0.0" text="Nuevo usuario" />
+        <TextField fx:id="newNickNameTextField" alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="27.0" prefWidth="294.0" promptText="Introduzca el nuevo usuario" style="-fx-border-color: #000000;" stylesheets="@styles.css" />
+        <Text fx:id="newNickNameTextAdvise" fill="#bf0b0b" strokeType="OUTSIDE" strokeWidth="0.0" />
+        <Text fx:id="newPasswordTextLabel" strokeType="OUTSIDE" strokeWidth="0.0" text="Nueva Contraseña" />
+        <PasswordField fx:id="newPasswordField" alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="27.0" prefWidth="294.0" promptText="Introduzca la nueva contraseña" style="-fx-border-color: #000000;" stylesheets="@styles.css" />
+        <Text fx:id="textRepeatPassword" strokeType="OUTSIDE" strokeWidth="0.0" text="Repetir Contraseña" />
+        <PasswordField fx:id="repeatNewPasswordField" alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="27.0" prefWidth="294.0" promptText="Repita la nueva contraseña" style="-fx-border-color: #000000;" stylesheets="@styles.css" />
+        <Text fx:id="textAdviseMessagePassword" fill="#bf0b0b" strokeType="OUTSIDE" strokeWidth="0.0" />
+        <Text fx:id="updateNameTextLabel" strokeType="OUTSIDE" strokeWidth="0.0" text="Nuevo nombre" />
+        <TextField fx:id="updateNewNameTextField" alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="27.0" prefWidth="294.0" promptText="Introduzca el nuevo nombre" style="-fx-border-color: #000000;" stylesheets="@styles.css" />
+        <Text fx:id="newNameTextAdvise" fill="#bf0b0b" strokeType="OUTSIDE" strokeWidth="0.0" />
+        <Text fx:id="newEmailLabel" strokeType="OUTSIDE" strokeWidth="0.0" text="Nuevo Email" />
+        <TextField fx:id="newEmailTextField" alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="27.0" prefWidth="294.0" promptText="Introduzca el nuevo email" style="-fx-border-color: #000000;" stylesheets="@styles.css" />
+        <Text fx:id="repeatNewEmailLabel" strokeType="OUTSIDE" strokeWidth="0.0" text="Repetir Email" />
+        <TextField fx:id="repeatNewEmailTextField" alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="27.0" prefWidth="294.0" promptText="Repita el nuevo email" style="-fx-border-color: #000000;" stylesheets="@styles.css" />
+        <Text fx:id="textAdviseEmail" fill="#bf0b0b" strokeType="OUTSIDE" strokeWidth="0.0" />
+        <Button fx:id="updateUserButton" mnemonicParsing="false" onAction="#onClickUpdateUser" prefHeight="30.0" prefWidth="138.0" text="Actualizar" />
+        <Text fx:id="updateUserTextAdvise" fill="#bf0b0b" strokeType="OUTSIDE" strokeWidth="0.0" />
+        <Button fx:id="deleteUserButton" mnemonicParsing="false" onAction="#onClickDeleteUser" prefHeight="30.0" prefWidth="138.0" text="Eliminar usuario" />
+        <Button fx:id="exitButton" mnemonicParsing="false" onAction="#onClickUpdateExitButton" prefHeight="25.0" prefWidth="74.0" text="Salir">
+            <VBox.margin>
+                <Insets top="5.0" />
+            </VBox.margin>
+        </Button>
+    </children>
+</VBox>

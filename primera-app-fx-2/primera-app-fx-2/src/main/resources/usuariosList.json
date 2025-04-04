@@ -1,0 +1,44 @@
+[
+  {
+    "usuarioNickName": "cdiagal",
+    "contrasenia": "aaa",
+    "nombre": "Carlos",
+    "email": "aaa@gmail.com"
+  },
+  {
+    "usuarioNickName": "pepillo",
+    "contrasenia": "bbb",
+    "nombre": "pepe",
+    "email": "bbb@bbb.com"
+  },
+  {
+    "usuarioNickName": "Juan",
+    "contrasenia": "ccc",
+    "nombre": "Juan",
+    "email": "aaaa@gmail.com"
+  },
+  {
+    "usuarioNickName": "ccc",
+    "contrasenia": "ccc",
+    "nombre": "cccc",
+    "email": "ccc@gmail.com"
+  },
+  {
+    "usuarioNickName": "aaa",
+    "contrasenia": "bbb",
+    "nombre": "Pepito",
+    "email": "cdd@gmail.com"
+  },
+  {
+    "usuarioNickName": "Pepito",
+    "contrasenia": "bbbbb",
+    "nombre": "Jose",
+    "email": "jose@gmail.com"
+  },
+  {
+    "usuarioNickName": "Pepe",
+    "contrasenia": "aaa",
+    "nombre": "Jose",
+    "email": "jose@gmail.com"
+  }
+]

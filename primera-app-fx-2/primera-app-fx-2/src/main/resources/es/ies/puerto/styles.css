@@ -1,0 +1,115 @@
+.loginVbox{
+    -fx-background-color:  #d2b48clinear-gradient(from 0% 100% to 0% 30%,, #f5f5dc,);
+    -fx-border-color:black, linear-gradient(from 0% 0% to 0% 100%, #d2b48c, #f5f5dc);;
+    -fx-border-width: 3, 7;
+    -fx-border-insets: 0, 6
+}
+
+
+.userDataVbox{
+    -fx-background-color:#DFC458;
+    -fx-border-width: 2px 2px 2px 2px;
+    -fx-border-radius:0px;
+    -fx-background-radius:0px;
+    -fx-border-style: solid;
+    -fx-border-color: #000000;
+    -fx-padding: 20px;
+}
+
+.updatePane{
+    -fx-background-color:#c1c9b6;
+    -fx-border-width: 2px 2px 2px 2px;
+    -fx-border-radius:20px;
+    -fx-background-radius:20px;
+    -fx-border-style: solid;
+    -fx-border-color: #000000;
+    -fx-padding: 20px;
+}
+.registerPane{
+    -fx-background-color:#c4c4bdcc;
+    -fx-border-width: 2px 2px 2px 2px;
+    -fx-border-radius:20px;
+    -fx-background-radius:20px;
+    -fx-border-style: solid;
+    -fx-border-color: #000000;
+    -fx-padding: 20px;
+}
+.userDataPane{
+    -fx-background-color:#e7dc3ccc;
+    -fx-border-width: 2px 2px 2px 2px;
+    -fx-border-radius:20px;
+    -fx-background-radius:20px;
+    -fx-border-style: solid;
+    -fx-border-color: #000000;
+    -fx-padding: 20px;
+}
+.recoverPasswordPane{
+    -fx-background-color:#ec7b1ecc;
+    -fx-border-width: 2px 2px 2px 2px;
+    -fx-border-radius:20px;
+    -fx-background-radius:20px;
+    -fx-border-style: solid;
+    -fx-border-color: #000000;
+    -fx-padding: 20px;
+}
+
+.textYpasswordField{
+    -fx-border-radius: 20px;
+    -fx-background-radius: 20px;
+    -fx-border-color: #000000 ;
+}
+
+.comboLanguages{
+    -fx-text-align: center;
+    -fx-font-size: 14px;
+    -fx-border-color: #000000;
+    -fx-border-color: #000000;
+    -fx-border-radius: 50px;
+    -fx-background-radius: 50px;
+    -fx-background-color: #e7e3e3;
+    -fx-border-width: 2px;
+    -fx-alignment: center;
+    -fx-content-display: center;
+    -fx-padding: 5px;
+    -fx-text-alignment: center;
+}
+
+/*boton de settings*/
+
+.usersButton{
+    -jfx-button-type: FLAT;
+    -jfx-rippler-fill: rgba(0, 0, 0, 0.15);
+    -fx-border-color: transparent;
+    -fx-background-color:transparent;
+    -fx-border-radius: 100%;
+    -fx-background-radius: 100%;
+    -fx-min-width: 20px;
+    -fx-min-height: 20px;
+    -fx-max-width: 20px;
+    -fx-max-height: 20px;
+    -fx-background-color: transparent;
+    -fx-alignment: center;
+    -fx-content-display: graphic-only;
+    -fx-padding: 0px;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.2),4,0,0,2);
+    -fx-cursor: hand;
+}
+
+
+.loginPane{
+    -fx-background-color: #dfdfd5cc;
+    -fx-border-width: 2px 2px 2px 2px;
+    -fx-border-radius:20px;
+    -fx-background-radius:20px;
+    -fx-border-style: solid;
+    -fx-border-color: #000000;
+    -fx-padding: 20px;
+    
+}
+
+
+.textFields{
+    -fx-border-radius: 20px;
+    -fx-background-radius: 20px;
+    -fx-border-color: #000000 ;
+}
