@@ -4,6 +4,7 @@ package es.ies.puerto.controller;
 import java.util.List;
 
 import es.ies.puerto.PrincipalApplication;
+import es.ies.puerto.controller.abstractas.AbstractController;
 import es.ies.puerto.model.Usuario;
 import es.ies.puerto.model.UsuarioServiceDB;
 import javafx.fxml.FXML;
@@ -16,7 +17,7 @@ import javafx.scene.layout.Pane;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
 
-public class UsersListController {
+public class UsersListController extends AbstractController{
     @FXML
     protected AnchorPane anchorPaneUsers;
 

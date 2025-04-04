@@ -72,7 +72,7 @@ public class LoginController extends AbstractController {
     /**
      * Se crea un metodo para hacer que se manejen eventos al hacer uso del comboBox
      */
-    comboLanguages.setOnAction(event -> {
+        comboLanguages.setOnAction(event -> {
         String idiomaElegido = comboLanguages.getValue().toString();//variable que adquiere el valor elegido en comboLanguaje
         AbstractController.setIdiomaActual(idiomaElegido);//Se guarda en la variable de la clase abstracta idiomaActual (que por defecto es español), el idioma elegido
         changeLanguaje();});
