@@ -45,7 +45,7 @@
             </font>
          </Text>
             <TextField fx:id="textFieldUsuario" alignment="CENTER" layoutX="83.0" layoutY="107.0" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="27.0" prefWidth="294.0" promptText="Introduzca el usuario" styleClass="textYpasswordField" stylesheets="@styles.css" />
-         <ComboBox fx:id="comboLanguages" layoutX="12.0" layoutY="33.0" maxWidth="140.0" minHeight="39.0" mouseTransparent="true" onAction="#changeLanguaje" prefHeight="44.0" prefWidth="140.0" promptText="Idioma" styleClass="comboLanguages" stylesheets="@styles.css">
+         <ComboBox fx:id="comboLanguages" layoutX="12.0" layoutY="33.0" maxWidth="140.0" minHeight="39.0"  onAction="#changeLanguaje" prefHeight="44.0" prefWidth="140.0" promptText="Idioma" styleClass="comboLanguages" stylesheets="@styles.css">
             <cursor>
                <Cursor fx:constant="HAND" />
             </cursor>
