@@ -6,7 +6,7 @@ import java.util.List;
 import es.ies.puerto.PrincipalApplication;
 import es.ies.puerto.controller.abstractas.AbstractController;
 import es.ies.puerto.model.Usuario;
-import es.ies.puerto.model.UsuarioServiceDB;
+import es.ies.puerto.model.service.UsuarioServiceDB;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
@@ -39,7 +39,7 @@ public class UsersListController extends AbstractController{
         List<Usuario> usuarios = usuarioServiceDB.loadFile();
 
         for (Usuario usuario : usuarios) {
-            listUsersView.getItems().add(usuario.getUsuarioNickName() + "," + usuario.getEmail());
+            listUsersView.getItems().add(usuario.getUsuarioNickName() + "-" + usuario.getEmail());
         }
     }
 

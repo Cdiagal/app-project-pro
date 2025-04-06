@@ -1,4 +1,4 @@
-package es.ies.puerto.model;
+package es.ies.puerto.model.service;
 
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -7,6 +7,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import es.ies.puerto.controller.abstractas.AbstractController;
+import es.ies.puerto.model.Usuario;
 
 /**
  * Clase que manipula los usuarios en funcion de lo que se necesite trabajar con los usuarios. Tiene implementado un CRUD.
@@ -25,16 +26,17 @@ public class UsuarioServiceDB extends AbstractController{
     public List<Usuario> loadFile(){
         List<Usuario> usuarios = new ArrayList<>();
         try {
-        String sql = "SELECT * from usuario";
+        String sql = "SELECT * from usuarios";
         conectar();
         PreparedStatement preparedStatement = getConnection().prepareStatement(sql);
         ResultSet cursor = preparedStatement.executeQuery();
         while (cursor.next()) {
-            String usuarioNickName = cursor.getString("usuario");
-            String nombre = cursor.getString("nombre");
-            String contrasenia = cursor.getString("contrasenia");
+            String usuarioNickName = cursor.getString("user");
             String email = cursor.getString("email");
-            Usuario usuario = new Usuario(usuarioNickName,nombre,contrasenia,email);
+            String contrasenia = cursor.getString("password");
+            int puntos = cursor.getInt("puntos");
+            int idNivel = cursor.getInt("id_nivel");
+            Usuario usuario = new Usuario(usuarioNickName, email, contrasenia, puntos, idNivel);
             usuarios.add(usuario);
         }
         } catch (Exception e) {
@@ -56,11 +58,12 @@ public class UsuarioServiceDB extends AbstractController{
         try {
             conectar();
             PreparedStatement sentencia = getConnection().prepareStatement(
-            "INSERT INTO usuario (usuario, nombre, contrasenia, email) values (?,?,?,?)");
+            "INSERT INTO usuarios (user, email, password, puntos, idNivel ) values (?,?,?,?,?,?)");
             sentencia.setString(1, newUser.getUsuarioNickName());
-            sentencia.setString(2, newUser.getNombre());
+            sentencia.setString(2, newUser.getEmail());
             sentencia.setString(3, newUser.getContrasenia());
-            sentencia.setString(4, newUser.getEmail());
+            sentencia.setInt(4, newUser.getPuntos());
+            sentencia.setInt(5, newUser.getIdNivel());
             sentencia.execute();
             return true;
         } catch (SQLException e) {
@@ -76,7 +79,7 @@ public class UsuarioServiceDB extends AbstractController{
         boolean existe = false;
         try {
             conectar();
-            String sql = "SELECT COUNT(*) FROM usuario WHERE usuario = ?";
+            String sql = "SELECT COUNT(*) FROM usuarios WHERE user = ?";
             PreparedStatement preparedStatement = getConnection().prepareStatement(sql);
             preparedStatement.setString(1, usuarioNickName);
             ResultSet resultado = preparedStatement.executeQuery();
@@ -93,7 +96,7 @@ public class UsuarioServiceDB extends AbstractController{
         boolean existe = false;
         try {
             conectar();
-            String sql = "SELECT COUNT(*) FROM usuario WHERE email = ?";
+            String sql = "SELECT COUNT(*) FROM usuarios WHERE email = ?";
             PreparedStatement preparedStatement = getConnection().prepareStatement(sql);
             preparedStatement.setString(1, email);
             ResultSet resultado = preparedStatement.executeQuery();

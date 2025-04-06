@@ -7,7 +7,7 @@ import java.util.regex.Pattern;
 import es.ies.puerto.PrincipalApplication;
 import es.ies.puerto.controller.abstractas.AbstractController;
 import es.ies.puerto.model.Usuario;
-import es.ies.puerto.model.UsuarioService;
+import es.ies.puerto.model.service.UsuarioService;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;

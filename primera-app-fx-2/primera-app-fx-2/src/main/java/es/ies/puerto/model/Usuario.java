@@ -14,11 +14,21 @@ public class Usuario {
     private String contrasenia;
     private String nombre;
     private String email;
+    private int puntos;
+    private int idNivel;
+    private String nivel;
 
     /**
      * Constructor vacio.
+     * Constructor con las propiedades que tiene la tabla usuarios.
      */
-    public Usuario(){}
+    public Usuario(String usuarioNickName, String contrasenia, String email, int puntos, int idNivel){
+        this.usuarioNickName = usuarioNickName;
+        this.contrasenia = contrasenia;
+        this.email = email;
+        this.puntos = puntos;
+        this.idNivel = idNivel;
+    }
 
     /**
      * Constructor que contiene el usuario.
@@ -36,11 +46,15 @@ public class Usuario {
      * @param nombre del usuario.
      * @param email del usuario.
      */
-    public Usuario(String usuarioNickName, String contrasenia, String nombre, String email){
+    public Usuario(String usuarioNickName, String contrasenia, String nombre, String email, int puntos, int idNivel, String nivel){
         this.usuarioNickName  = usuarioNickName;
         this.contrasenia = contrasenia;
         this.nombre = nombre;
         this.email = email;
+        this.puntos = puntos;
+        this.idNivel = idNivel;
+        this.nivel = nivel;
+        
     }
 
     /**
@@ -79,12 +93,83 @@ public class Usuario {
         this.email = email;
     }
 
+    public String getNivel() {
+        return nivel;
+    }
+
+    public void setNivel(String nivel) {
+        this.nivel = nivel;
+    }
+
+    public int getPuntos() {
+        return puntos;
+    }
+
+    public void setPuntos(int puntos) {
+        this.puntos = puntos;
+    }
+
+    public int getIdNivel() {
+        return idNivel;
+    }
+
+    public void setIdNivel(int idNivel) {
+        this.idNivel = idNivel;
+    }
+
+
+    /**
+     * Funcion que incrementa la cantidad de puntos.
+     * @param cantidad
+     */
+    public void incrementarPuntos(int cantidad){
+        this.puntos += cantidad;
+        actualizarNivel();
+    }
+
+    /**
+     * Funcion que actualiza el nivel en funcion a la cantidad de puntos que el usuario tenga acumulados.
+     */
+    public void actualizarNivel(){
+        if(puntos < 25){
+            nivel = "facil";
+        } else if (puntos < 50) {
+            nivel = "medio";
+        } else {
+            nivel = "dificil";
+        }
+    }
+
+    /**
+     * Metodo que obtiene nombre del nivel segun el valor atribuido en idNivel.
+     */
+    public String obtenerNivel(){
+        String nivel ;
+        switch (idNivel) {
+            case 1:
+                nivel = "facil";
+                break;
+            case 2:
+                nivel = "medio";
+                break;
+            case 3:
+                nivel = "dificil";
+                break;
+            default:
+                nivel = "desconocido";
+                break;
+        }
+        return nivel;
+    }
+
+
     /**
      * Metodo toString().
      */
     @Override
     public String toString() {
-        return "Nickname: " + usuarioNickName + "Contraseña: " +  contrasenia + "Nombre: " +  nombre +  "Email: " + email;
+        return "Nickname: " + usuarioNickName + "Contraseña: " +  contrasenia + "Nombre: " +  nombre +  "Email: " + email
+                + "Puntos: " + puntos + "Id nivel: " + idNivel + "Nivel : " + nivel;
     }
 
 
@@ -106,6 +191,6 @@ public class Usuario {
         return Objects.hash(usuarioNickName);
     }
     
-
-
 }
+
+

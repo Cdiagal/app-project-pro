@@ -1,7 +1,10 @@
-package es.ies.puerto.model;
+package es.ies.puerto.model.service;
 
 import java.util.ArrayList;
 import java.util.List;
+
+import es.ies.puerto.model.Usuario;
+import es.ies.puerto.model.UsuarioUtilJson;
 
 /**
  * Clase que manipula los usuarios en funcion de lo que se necesite trabajar con los usuarios. Tiene implementado un CRUD.

@@ -5,7 +5,7 @@ import java.io.IOException;
 import es.ies.puerto.PrincipalApplication;
 import es.ies.puerto.controller.abstractas.AbstractController;
 import es.ies.puerto.model.Usuario;
-import es.ies.puerto.model.UsuarioService;
+import es.ies.puerto.model.service.UsuarioService;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
@@ -68,14 +68,6 @@ public class LoginController extends AbstractController {
 
         comboLanguages.setValue("español");
         changeLanguaje();
-
-    /**
-     * Se crea un metodo para hacer que se manejen eventos al hacer uso del comboBox
-     */
-        comboLanguages.setOnAction(event -> {
-        String idiomaElegido = comboLanguages.getValue().toString();//variable que adquiere el valor elegido en comboLanguaje
-        AbstractController.setIdiomaActual(idiomaElegido);//Se guarda en la variable de la clase abstracta idiomaActual (que por defecto es español), el idioma elegido
-        changeLanguaje();});
     }
 
     /**
@@ -83,6 +75,8 @@ public class LoginController extends AbstractController {
      */
     @FXML
     public void changeLanguaje() {
+        String idiomaElegido = comboLanguages.getValue().toString();
+        AbstractController.setIdiomaActual(idiomaElegido);
         setPropertiesLanguaje(loadLanguage("languaje", comboLanguages.getValue().toString()));
 
         userTextUsuario.setText(getPropertiesLanguaje().getProperty("userTextUsuario"));

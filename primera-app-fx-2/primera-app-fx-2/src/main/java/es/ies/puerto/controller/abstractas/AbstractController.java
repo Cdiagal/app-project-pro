@@ -9,7 +9,7 @@ import es.ies.puerto.model.abstractas.Conexion;
 
 public abstract class AbstractController extends Conexion{
 
-    static final String PATH_DB =  "src/main/resources/usuarios.db";
+    static final String PATH_DB =  "src/main/resources/ahorcado.db";
 
     private Properties propertiesLanguaje;
     private static String idiomaActual = "español";
