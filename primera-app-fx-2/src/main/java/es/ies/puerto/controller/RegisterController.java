@@ -27,7 +27,7 @@ import javafx.stage.Stage;
 
 public class RegisterController extends AbstractController {
     
-    private final UsuarioService usuarioService = new UsuarioService();
+    private final UsuarioServiceDB usuarioServiceDB = new UsuarioServiceDB();
 
     @FXML
     private Text textRegisterBigLabel;

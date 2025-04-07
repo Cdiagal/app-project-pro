@@ -16,10 +16,10 @@ CREATE TABLE usuarios (
 
 CREATE INDEX idx_email ON usuarios (email);
 
-INSERT INTO usuarios (user, email, password, id_nivel) VALUES 
-    ('Usuario-1', 'email1@example.com', 'contraseña123', 1),  
-    ('Usuario-2', 'email2@example.com', 'abc456', 1), 
-    ('Usuario-3', 'email3@example.com', 'xyz789', 1);  
+INSERT INTO usuarios (user, nombre, email, password, id_nivel) VALUES 
+    ('Usuario-1', 'Pepito' , 'email1@example.com', 'contraseña123', 1),  
+    ('Usuario-2', 'Juanito' ,'email2@example.com', 'abc456', 1), 
+    ('Usuario-3', 'Toribio' ,'email3@example.com', 'xyz789', 1);  
 
 CREATE TABLE niveles (
     id INTEGER PRIMARY KEY AUTOINCREMENT,

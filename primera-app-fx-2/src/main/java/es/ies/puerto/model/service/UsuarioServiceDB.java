@@ -58,12 +58,11 @@ public class UsuarioServiceDB extends AbstractController{
         try {
             conectar();
             PreparedStatement sentencia = getConnection().prepareStatement(
-            "INSERT INTO usuarios (user, email, password, puntos, idNivel ) values (?,?,?,?,?,?)");
+            "INSERT INTO usuarios (user, nombre, email, password) values (?,?,?,?,?)");
             sentencia.setString(1, newUser.getUsuarioNickName());
-            sentencia.setString(2, newUser.getEmail());
-            sentencia.setString(3, newUser.getContrasenia());
-            sentencia.setInt(4, newUser.getPuntos());
-            sentencia.setInt(5, newUser.getIdNivel());
+            sentencia.setString(2, newUser.getNombre());
+            sentencia.setString(3, newUser.getEmail());
+            sentencia.setString(4, newUser.getContrasenia());
             sentencia.execute();
             return true;
         } catch (SQLException e) {

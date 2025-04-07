@@ -107,7 +107,6 @@ public class UserDataController extends AbstractController{
         userTextUsuario.setText(getPropertiesLanguaje().getProperty("userTextUsuario"));
         userTextPassword.setText(getPropertiesLanguaje().getProperty("userTextPassword"));
         showPasswordCheckBox.setText(getPropertiesLanguaje().getProperty("showPasswordCheckBox"));
-        nameTextLabel.setText(getPropertiesLanguaje().getProperty("nameTextLabel"));
         textEmailLabel.setText(getPropertiesLanguaje().getProperty("textEmailLabel"));
         updateUserDataButton.setText(getPropertiesLanguaje().getProperty("updateUserDataButton"));
         exitButton.setText(getPropertiesLanguaje().getProperty("exitButton"));
