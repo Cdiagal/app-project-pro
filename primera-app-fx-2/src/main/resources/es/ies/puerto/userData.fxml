@@ -1,20 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
-<?import javafx.scene.control.CheckBox?>
-<?import javafx.scene.control.PasswordField?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.Pane?>
-<?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<VBox fx:id="userDataVbox" alignment="CENTER" prefHeight="728.0" prefWidth="500.0" spacing="20.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="es.ies.puerto.controller.UserDataController">
-<children>
-      <Pane fx:id="userDataPane" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="60.0" prefWidth="327.0" styleClass="userDataPane" stylesheets="@styles.css">
+
+<AnchorPane fx:id="userDataAnchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="838.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <Pane fx:id="userDataPane" layoutX="135.0" layoutY="42.0" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="60.0" prefWidth="327.0" styleClass="userDataPane" stylesheets="@styles.css">
          <children>
             <ImageView fx:id="dataBaseIcon" fitHeight="51.0" fitWidth="53.0" layoutX="43.0" layoutY="4.0" pickOnBounds="true" preserveRatio="true">
                <image>
@@ -28,32 +26,15 @@
             </Text>
          </children>
       </Pane>
-    <Text fx:id="userTextUsuario" strokeType="OUTSIDE" strokeWidth="0.0" text="Usuario">
-        <VBox.margin>
-            <Insets top="15.0" />
-        </VBox.margin></Text>
-    <TextField fx:id="userDataUserTextField" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="27.0" prefWidth="200.0" />
-    <Text fx:id="userTextPassword" strokeType="OUTSIDE" strokeWidth="0.0" text="Contraseña" />
-    <PasswordField fx:id="userDataPasswordField" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="27.0" prefWidth="200.0" />
-    <CheckBox fx:id="showPasswordCheckBox" mnemonicParsing="false" text="Mostrar contraseña">
-        <VBox.margin>
-            <Insets right="70.0" />
-        </VBox.margin>
-    </CheckBox>
-    <Text fx:id="nameTextLabel" strokeType="OUTSIDE" strokeWidth="0.0" text="Nombre" />
-    <TextField fx:id="userDataNameTextField" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="27.0" prefWidth="200.0" />
-    <Text fx:id="textEmailLabel" strokeType="OUTSIDE" strokeWidth="0.0" text="Email" />
-    <TextField fx:id="userDataEmailTextField" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="27.0" prefWidth="200.0" />
-        <Text fx:id="adviseUserDataText" strokeType="OUTSIDE" strokeWidth="0.0">
-            <VBox.margin>
-                <Insets top="15.0" />
-            </VBox.margin>
-        </Text>
-      <Button fx:id="updateUserDataButton" maxHeight="-Infinity" maxWidth="-Infinity" mnemonicParsing="false" onAction="#onClickOpenUpdateUserData" prefHeight="32.0" prefWidth="117.0" text="" />
-    <Button fx:id="exitButton" mnemonicParsing="false" onAction="#onClickExitUserData" prefHeight="32.0" prefWidth="77.0" text="Salir">
-        <VBox.margin>
-        <Insets bottom="15.0" top="15.0" />
-        </VBox.margin>
-    </Button>
-</children>
-</VBox>
+      <Text fx:id="userTextUsuario" layoutX="273.0" layoutY="189.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Usuario" />
+      <TextField fx:id="userDataUserTextField" layoutX="200.0" layoutY="214.0" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="27.0" prefWidth="200.0" />
+      <Text fx:id="levelTextLabel" layoutX="284.0" layoutY="281.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Nivel" />
+      <TextField fx:id="userDataLevelTextField" layoutX="201.0" layoutY="302.0" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="27.0" prefWidth="200.0" />
+      <Text fx:id="textEmailLabel" layoutX="281.0" layoutY="365.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Email" />
+      <TextField fx:id="userDataEmailTextField" layoutX="201.0" layoutY="380.0" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="27.0" prefWidth="200.0" />
+      <Text fx:id="adviseUserDataText" layoutX="284.0" layoutY="449.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="27.0" />
+      <Button fx:id="updateUserDataButton" layoutX="243.0" layoutY="477.0" maxHeight="-Infinity" maxWidth="-Infinity" mnemonicParsing="false" onAction="#onClickOpenUpdateUserData" prefHeight="32.0" prefWidth="117.0" text="" />
+      <Button fx:id="playButton" layoutX="243.0" layoutY="537.0" mnemonicParsing="false" onAction="#onClicPlayGame" prefHeight="32.0" prefWidth="117.0" />
+      <Button fx:id="exitButton" layoutX="263.0" layoutY="594.0" mnemonicParsing="false" onAction="#onClickExitUserData" prefHeight="32.0" prefWidth="77.0" text="Salir" />
+   </children>
+</AnchorPane>

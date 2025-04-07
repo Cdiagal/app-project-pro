@@ -43,13 +43,13 @@ public class UserDataController extends AbstractController{
     private CheckBox showPasswordCheckBox;
 
     @FXML
-    private Text nameTextLabel;
+    private Text levelTextLabel;
+
+    @FXML
+    private TextField userDataLevelTextField;
 
     @FXML
     private Text textEmailLabel;
-
-    @FXML
-    private TextField userDataNameTextField;
 
     @FXML
     private TextField userDataEmailTextField;
@@ -61,7 +61,12 @@ public class UserDataController extends AbstractController{
     private Button updateUserDataButton;
 
     @FXML
+    private Button playButton;
+
+    @FXML
     private Button exitButton;
+
+
 
     private Usuario usuario;
 
@@ -74,8 +79,8 @@ public class UserDataController extends AbstractController{
     if(usuario != null){
         userDataUserTextField.setText(usuario.getUsuarioNickName());
         userDataPasswordField.setText(usuario.getContrasenia());
-        userDataNameTextField.setText(usuario.getNombre());
         userDataEmailTextField.setText(usuario.getEmail());
+        userDataLevelTextField.setText(usuario.getNivel());
     }
     }
 

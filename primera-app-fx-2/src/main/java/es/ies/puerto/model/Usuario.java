@@ -31,6 +31,20 @@ public class Usuario {
     }
 
     /**
+     * Constructor para registrar.
+     * @param usuarioNickName
+     * @param contrasenia
+     * @param nombre
+     * @param email
+     */
+    public Usuario(String usuarioNickName, String contrasenia, String nombre, String email){
+        this.usuarioNickName = usuarioNickName;
+        this.contrasenia = contrasenia;
+        this.nombre = nombre;
+        this.email = email;
+    }
+
+    /**
      * Constructor que contiene el usuario.
      * @param usuario nickname unico del usuario.
      */
