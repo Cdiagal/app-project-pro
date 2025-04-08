@@ -6,6 +6,7 @@ import es.ies.puerto.PrincipalApplication;
 import es.ies.puerto.controller.abstractas.AbstractController;
 import es.ies.puerto.model.Usuario;
 import es.ies.puerto.model.service.UsuarioService;
+import es.ies.puerto.model.service.UsuarioServiceDB;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
@@ -25,7 +26,7 @@ import javafx.stage.Stage;
 
 public class LoginController extends AbstractController {
 
-    private final UsuarioService usuarioService = new UsuarioService();
+    private final UsuarioServiceDB usuarioServiceDB = new UsuarioServiceDB();
 
     @FXML
     private ComboBox comboLanguages;
@@ -132,7 +133,7 @@ public class LoginController extends AbstractController {
             return null;
         }
 
-        Usuario usuarioLogin = usuarioService.findByNickName(textFieldUsuario.getText());
+        Usuario usuarioLogin = usuarioServiceDB.findUserByNickName(textFieldUsuario.getText());
         if (usuarioLogin == null) {
             textFieldMensaje.setText(getPropertiesLanguaje().getProperty("textFieldMensaje_errorUser"));
             return null;

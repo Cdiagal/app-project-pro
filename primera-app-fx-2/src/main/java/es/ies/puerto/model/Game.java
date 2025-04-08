@@ -137,4 +137,56 @@ public class Game {
     }
 
 
+    /**
+     * Metodo que revisa si se acierta letras en la palabra y modifica los intentos restantes.
+     * @param letra de la palabra.
+     * @return acierto.
+     */
+    public boolean adivinarLetra(char letra){
+        letra = Character.toLowerCase(letra);
+        if(letrasUsadas.contains(letra)){
+            return false;
+        }
+        letrasUsadas.add(letra);
+
+        boolean acierto = false;
+
+        for (int i = 0; i < palabra.getTexto().length(); i++) {
+            if(palabra.getTexto().toLowerCase().charAt(i) == letra){
+                palabraOculta[i]=letra;
+                acierto = true;
+            }
+        }
+        if(!acierto){
+            intentosRestantes--;
+        }
+        return acierto;
+    }
+
+    /**
+     * Metodo que comprueba si el usuario ha ganado la partida
+     * @return ganar la partida.
+     */
+    public boolean hasGanado(){
+        for (char letra : palabraOculta) {
+            if(letra == '_'){
+                return false;
+            }
+        }
+        System.out.println("¡Enhorabuena! ¡Has ganado la partida!");
+        return true;
+    }
+
+    /**
+     * Metodo que comprueba si el usuario ha perdido la partida y muestra la palabra.
+     * @return perder la partida.
+     */
+    public boolean hasPerdido(){
+        if(intentosRestantes <= 0){
+            System.out.println("¡Has perdido la partida! :(, la palabra era: " + palabra.getTexto());
+            return true;
+        }
+        return false;
+    }
+
 }

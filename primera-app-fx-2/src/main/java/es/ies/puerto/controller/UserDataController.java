@@ -78,7 +78,6 @@ public class UserDataController extends AbstractController{
     public void usuarioData(){
     if(usuario != null){
         userDataUserTextField.setText(usuario.getUsuarioNickName());
-        userDataPasswordField.setText(usuario.getContrasenia());
         userDataEmailTextField.setText(usuario.getEmail());
         userDataLevelTextField.setText(usuario.getNivel());
     }

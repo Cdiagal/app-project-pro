@@ -42,6 +42,9 @@ public class Usuario {
         this.contrasenia = contrasenia;
         this.nombre = nombre;
         this.email = email;
+        this.puntos = 0;
+        this.idNivel = 1;
+        this.obtenerNivel();
     }
 
     /**
@@ -50,6 +53,19 @@ public class Usuario {
      */
     public Usuario(String usuarioNickName){
         this.usuarioNickName = usuarioNickName;
+    }
+
+    /**
+     * Constructor para mostrar la informacion del usuario en userData, despues del loguearse
+     * @param usuarioNickName
+     * @param email
+     * @param idNivel
+     */
+    public Usuario(String usuarioNickName, String contrasenia, String email, int idNivel){
+        this.usuarioNickName = usuarioNickName;
+        this.contrasenia = contrasenia;
+        this.email = email;
+        this.idNivel = idNivel;
     }
 
 
@@ -67,7 +83,7 @@ public class Usuario {
         this.email = email;
         this.puntos = puntos;
         this.idNivel = idNivel;
-        this.nivel = nivel;
+        this.nivel = nivel != null ? nivel : obtenerNivel();
         
     }
 
@@ -111,9 +127,6 @@ public class Usuario {
         return nivel;
     }
 
-    public void setNivel(String nivel) {
-        this.nivel = nivel;
-    }
 
     public int getPuntos() {
         return puntos;

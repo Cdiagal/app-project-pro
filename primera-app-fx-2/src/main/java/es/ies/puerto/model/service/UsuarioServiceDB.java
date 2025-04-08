@@ -18,7 +18,10 @@ import es.ies.puerto.model.Usuario;
 
 public class UsuarioServiceDB extends AbstractController{
     
-
+    public UsuarioServiceDB(){
+        super();
+        
+    }
     /**
      * Metodo que lee el fichero.
      * @return Lista con usuarios.
@@ -48,6 +51,33 @@ public class UsuarioServiceDB extends AbstractController{
     }
 
 
+    public Usuario findUserByNickName(String nickName) {
+        Usuario usuario = null;
+        try {
+            conectar();
+            String sql = "SELECT * FROM usuarios WHERE user = ?";
+            PreparedStatement preparedStatement = getConnection().prepareStatement(sql);
+            preparedStatement.setString(1, nickName);
+            ResultSet cursor = preparedStatement.executeQuery();
+    
+            if (cursor.next()) {
+                String usuarioNickName = cursor.getString("user");
+                String email = cursor.getString("email");
+                String contrasenia = cursor.getString("password");
+                int idNivel = cursor.getInt("id_nivel");
+                usuario = new Usuario(usuarioNickName, contrasenia, email, idNivel);
+            }
+    
+        } catch (Exception e) {
+            e.printStackTrace();
+        } finally {
+            cerrar();
+        }
+    
+        return usuario;
+    }
+    
+
     /**
      * Metodo que añade un usuario a la base de datos.
      * @param newUser
@@ -58,7 +88,7 @@ public class UsuarioServiceDB extends AbstractController{
         try {
             conectar();
             PreparedStatement sentencia = getConnection().prepareStatement(
-            "INSERT INTO usuarios (user, nombre, email, password) values (?,?,?,?,?)");
+            "INSERT INTO usuarios (user, nombre, email, password) values (?,?,?,?)");
             sentencia.setString(1, newUser.getUsuarioNickName());
             sentencia.setString(2, newUser.getNombre());
             sentencia.setString(3, newUser.getEmail());
@@ -73,40 +103,52 @@ public class UsuarioServiceDB extends AbstractController{
         }
     }
 
-
-    public boolean comprobarUsuario (String usuarioNickName){
+    /**
+     * Metodo que comprueba si el usuario existe o no.
+     */
+    public boolean comprobarUsuario(String usuarioNickName){
         boolean existe = false;
         try {
             conectar();
-            String sql = "SELECT COUNT(*) FROM usuarios WHERE user = ?";
+            String sql = "SELECT COUNT(*) AS total FROM usuarios WHERE user = ?";
             PreparedStatement preparedStatement = getConnection().prepareStatement(sql);
             preparedStatement.setString(1, usuarioNickName);
             ResultSet resultado = preparedStatement.executeQuery();
             if (resultado.next()){
-                existe = true;
+                existe = resultado.getInt("total") > 0;
             }
         } catch (Exception e) {
-                e.printStackTrace();
+            e.printStackTrace();
+        } finally {
+            cerrar();
         }
         return existe;
     }
-
-    public boolean comprobarEmail (String email){
+    
+    /**
+     * Metodo que comprueba si el email existe o no.
+     */
+    public boolean comprobarEmail(String email){
         boolean existe = false;
         try {
             conectar();
-            String sql = "SELECT COUNT(*) FROM usuarios WHERE email = ?";
+            String sql = "SELECT COUNT(*) AS total FROM usuarios WHERE email = ?";
             PreparedStatement preparedStatement = getConnection().prepareStatement(sql);
             preparedStatement.setString(1, email);
             ResultSet resultado = preparedStatement.executeQuery();
             if (resultado.next()){
-                existe = true;
+                existe = resultado.getInt("total") > 0;
             }
         } catch (Exception e) {
-                e.printStackTrace();
+            e.printStackTrace();
+        } finally {
+            cerrar();
         }
         return existe;
     }
+
+   
+    
     
     
 }
