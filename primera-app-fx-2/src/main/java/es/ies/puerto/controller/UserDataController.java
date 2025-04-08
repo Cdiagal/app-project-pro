@@ -104,10 +104,9 @@ public class UserDataController extends AbstractController{
         if(getPropertiesLanguaje() != null){
         textUserDataBigLabel.setText(getPropertiesLanguaje().getProperty("textUserDataBigLabel"));
         userTextUsuario.setText(getPropertiesLanguaje().getProperty("userTextUsuario"));
-        userTextPassword.setText(getPropertiesLanguaje().getProperty("userTextPassword"));
-        showPasswordCheckBox.setText(getPropertiesLanguaje().getProperty("showPasswordCheckBox"));
         textEmailLabel.setText(getPropertiesLanguaje().getProperty("textEmailLabel"));
         updateUserDataButton.setText(getPropertiesLanguaje().getProperty("updateUserDataButton"));
+        playButton.setText(getPropertiesLanguaje().getProperty("playButton"));
         exitButton.setText(getPropertiesLanguaje().getProperty("exitButton"));
         }
     }
@@ -140,6 +139,24 @@ public class UserDataController extends AbstractController{
             FXMLLoader fxmlLoader = new FXMLLoader(PrincipalApplication.class.getResource("login.fxml"));
             Scene scene = new Scene(fxmlLoader.load(), 544 , 621);
             stage.setTitle("Datos de Usuario");
+            stage.setScene(scene);
+            stage.show();
+        } catch (IOException e) {
+            adviseUserDataText.setText("Error al cargar la página Login");
+            e.printStackTrace();
+        }
+    }
+
+        /**
+     * Funcion que abre la página Login al pulsar el boton 'Salir'.
+     */
+    @FXML
+    protected void onClicPlayGame(){
+        try {
+            Stage stage = (Stage) playButton.getScene().getWindow();
+            FXMLLoader fxmlLoader = new FXMLLoader(PrincipalApplication.class.getResource("game.fxml"));
+            Scene scene = new Scene(fxmlLoader.load(), 544 , 621);
+            stage.setTitle("Ahorcado");
             stage.setScene(scene);
             stage.show();
         } catch (IOException e) {
